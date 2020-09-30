@@ -9,6 +9,6 @@
 </head>
 <body>
     <h1>Produtos Cadastrados</h1>
-    <a href="cadastrarProduto.jsp">Cadastrar Produto</a> 
+    <a href="cadastro.jsp">Cadastrar Produto</a> 
 </body>
 </html>

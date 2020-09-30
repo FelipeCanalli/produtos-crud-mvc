@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>Cadastrar Produto</h1>
-	<form name="frmCadastrar" action="">
+	<form name="frmCadastrar" action="Controller">
 		<table>
 			<tr>
 				<td><label for="tipo">Tipo:</label> <select name="tipo">
