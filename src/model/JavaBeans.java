@@ -7,6 +7,20 @@ public class JavaBeans {
 	private String descricao;
 	private String preco;
 
+	// Construtor padrão
+	public JavaBeans() {
+		
+	}
+
+	// Construtor que recebe o ArrayList do método listarConstatos() (DAO)
+	public JavaBeans(String idproduto, String tipo, String nomeproduto, String descricao, String preco) {
+		this.idproduto = idproduto;
+		this.tipo = tipo;
+		this.nomeproduto = nomeproduto;
+		this.descricao = descricao;
+		this.preco = preco;
+	}
+
 	public String getIdproduto() {
 		return idproduto;
 	}

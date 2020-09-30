@@ -3,6 +3,8 @@ package model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class DAO {
 
@@ -39,6 +41,29 @@ public class DAO {
 			con.close();
 		} catch (Exception e) {
 			System.out.println("Erro: " + e);
+		}
+	}
+
+	/*** CRUD - Read ***/
+	public ArrayList<JavaBeans> listarContatos() {
+		ArrayList<JavaBeans> javabeans = new ArrayList<>();
+		String query = "select * from tbproduto order by tipo desc";
+		try {
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(query);
+			ResultSet rs = pst.executeQuery();
+			while (rs.next()) {
+				String idproduto = rs.getString(1);
+				String tipo = rs.getString(2);
+				String nomeproduto = rs.getString(3);
+				String descricao = rs.getString(4);
+				String preco = rs.getString(5);
+				javabeans.add(new JavaBeans(idproduto, tipo, nomeproduto, descricao, preco));
+			}
+			return javabeans;
+		} catch (Exception e) {
+			System.out.println("Erro: " + e);
+			return null;
 		}
 	}
 
