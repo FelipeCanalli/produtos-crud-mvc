@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import model.DAO;
 import model.JavaBeans;
 
-@WebServlet("/Controller")
+/*** Ajustando o path para as rotas ***/
+@WebServlet(urlPatterns = { "/Controller", "/insert", "/update1", "/delete" })
 
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -23,9 +24,30 @@ public class Controller extends HttpServlet {
 		super();
 	}
 
+	/*** Método principal do servlet (controller) ***/
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Método principal do Servlet
+		String action = request.getServletPath();
+
+		if (action.equals("/insert")) {
+			novoProduto(request, response);
+
+		} else if (action.contentEquals("/update1")) {
+			editarProduto(request, response);
+
+		} else if (action.contentEquals("/delete")) {
+			excluirProduto(request, response);
+		}
+
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+	protected void novoProduto(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String tipo = request.getParameter("tipo");
 		String nomeproduto = request.getParameter("nomeproduto");
 		String descricao = request.getParameter("descricao");
@@ -38,9 +60,16 @@ public class Controller extends HttpServlet {
 		response.sendRedirect("index.jsp");
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void editarProduto(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doGet(request, response);
+		String idproduto = request.getParameter("idproduto");
+		javabeans.setIdproduto(idproduto);
 	}
 
+	protected void excluirProduto(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String idproduto = request.getParameter("idproduto");
+		System.out.println(idproduto);
+
+	}
 }

@@ -14,7 +14,7 @@
 	<h1>Produtos Cadastrados</h1>
 	<a href="cadastro.jsp">Cadastrar Produto</a>
 
-	<table>
+	<table border="1">
 		<thead>
 			<tr>
 				<th>idproduto</th>
@@ -22,7 +22,7 @@
 				<th>Nome do Produto</th>
 				<th>Descrição</th>
 				<th>Preço</th>
-				<th>Ações</th>
+				<th colspan="2">Ações</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -37,8 +37,12 @@
 				<td><%=javabeans.get(i).getNomeproduto()%></td>
 				<td><%=javabeans.get(i).getDescricao()%></td>
 				<td><%=javabeans.get(i).getPreco()%></td>
-				<td><a href=""><img alt="Editar" src="img/edit.png"></a>
-					<a href=""><img alt="Excluir" src="img/delete.png"></a></td>
+				<td><a
+					href="update1?idproduto=<%=javabeans.get(i).getIdproduto()%>"><img
+						alt="Editar" src="img/edit.png"></a></td>
+				<td><a
+					href="delete?idproduto=<%=javabeans.get(i).getIdproduto()%>"><img
+						alt="Excluir" src="img/delete.png"></a></td>
 			</tr>
 			<%
 				}
