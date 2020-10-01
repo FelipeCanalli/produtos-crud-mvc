@@ -98,9 +98,24 @@ public class DAO {
 			pst.setString(4, javabeans.getPreco());
 			pst.setString(5, javabeans.getIdproduto());
 			pst.executeUpdate();
-			// con.close();
+			con.close();
 		} catch (Exception e) {
 			System.out.println("Erro: " + e);
 		}
+	}
+
+	/*** CRUD - Delete ***/
+	public void deletarContato(JavaBeans javabeans) {
+		String query = "delete from tbproduto where idproduto=?";
+		try {
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(query);
+			pst.setString(1, javabeans.getIdproduto());
+			pst.executeUpdate();
+			con.close();
+		} catch (Exception e) {
+			System.out.println("Erro: " + e);
+		}
+
 	}
 }

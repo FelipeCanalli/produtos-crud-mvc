@@ -96,7 +96,10 @@ public class Controller extends HttpServlet {
 	protected void excluirProduto(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String idproduto = request.getParameter("idproduto");
-		System.out.println(idproduto);
+		javabeans.setIdproduto(idproduto);
 
+		dao.deletarContato(javabeans);
+
+		response.sendRedirect("index.jsp");
 	}
 }
