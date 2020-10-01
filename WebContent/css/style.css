@@ -1,0 +1,89 @@
+@import
+	url("https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap")
+	;
+
+* {
+	font-family: "Open Sans", sans-serif;
+}
+
+body {
+	background-color: #24344c;
+}
+
+h1 {
+	margin-top: 100px;
+	text-align: center;
+	color: white;
+	font-family: "Signika Negative", sans-serif;
+}
+
+#caixaBtn {
+	display: "flex";
+	margin: 30px 200px;
+}
+
+#tbl1 {
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	padding: 10px;
+	box-shadow: 5px 10px 20px #00000082;
+}
+
+#tbl1 th {
+	background-color: #01579b;
+	color: white;
+	padding: 8px;
+}
+
+#tbl1 tr td {
+	background-color: white;
+	border-style: solid;
+	border-color: rgba(78, 78, 78, 0.253);
+	border-width: 1px;
+	padding: 6px;
+}
+
+.btn1 {
+	font-family: "Signika Negative", sans-serif;
+	text-decoration: none;
+	color: white;
+	background-color: #01579b;
+	padding: 10px;
+	border-radius: 4px;
+	margin: 15px;
+}
+
+.img-btn {
+	width: 20px;
+	height: auto;
+}
+
+/*	editar.jsp / cadastro.jsp	*/
+
+#tbl2{
+	margin-left:auto;
+	margin-right:auto;
+	background-color:white;
+	padding:15px;
+    width: 30%;
+    height: 300px;
+}
+
+#tbl2 tr td input {
+width:100%;
+	height:25px;
+	font-size:12pt;
+}
+
+.btn2 {
+	font-family: "Signika Negative", sans-serif;
+	text-decoration: none;
+	color: white;
+	background-color: #9C1511;
+	padding:10px;
+	width:20px;
+
+	border-radius: 4px;
+}

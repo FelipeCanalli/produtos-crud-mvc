@@ -12,12 +12,14 @@ String preco = (String) request.getAttribute("preco");
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="img/pizza-icon.png" />
 <title>Produtos Cadastrados</title>
+<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 	<form name="frmCadastrar" action="update2">
 		<h1>Editar Produto</h1>
-		<table>
+		<table id="tbl2">
 			<tr>
 				<td><input type="text" name="idproduto" value="<%=idproduto%>"
 					readonly /></td>
@@ -48,9 +50,14 @@ String preco = (String) request.getAttribute("preco");
 			<tr>
 				<td><input type="number" name="preco" placeholder="Preço"
 					value="<%=preco%>" /></td>
+
+			</tr>
+			<tr>
+				<td><input class="btn2" type="button" value="Salvar"
+					onclick="validar()"></td>
 			</tr>
 		</table>
-		<input type="button" value="Salvar" onclick="validar()">
+
 	</form>
 	<script src="js/validador.js"></script>
 
