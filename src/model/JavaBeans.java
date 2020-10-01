@@ -9,7 +9,7 @@ public class JavaBeans {
 
 	// Construtor padrão
 	public JavaBeans() {
-		
+
 	}
 
 	// Construtor que recebe o ArrayList do método listarConstatos() (DAO)

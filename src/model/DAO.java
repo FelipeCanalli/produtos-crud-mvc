@@ -67,4 +67,40 @@ public class DAO {
 		}
 	}
 
+	/*** CRUD - Update ***/
+	public void listarContato(JavaBeans javabeans) {
+		String query = "select * from tbproduto where idproduto=?";
+		try {
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(query);
+			pst.setString(1, javabeans.getIdproduto());
+			ResultSet rs = pst.executeQuery();
+			while (rs.next()) {
+				javabeans.setIdproduto(rs.getString(1));
+				javabeans.setTipo(rs.getString(2));
+				javabeans.setNomeproduto(rs.getString(3));
+				javabeans.setDescricao(rs.getString(4));
+				javabeans.setPreco(rs.getString(5));
+			}
+		} catch (Exception e) {
+			System.out.println("Erro: " + e);
+		}
+	}
+
+	public void alterarContato(JavaBeans javabeans) {
+		String query = "update tbproduto set tipo=?, nomeproduto=?, descricao=?, preco=? where idproduto=?";
+		try {
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(query);
+			pst.setString(1, javabeans.getTipo());
+			pst.setString(2, javabeans.getNomeproduto());
+			pst.setString(3, javabeans.getDescricao());
+			pst.setString(4, javabeans.getPreco());
+			pst.setString(5, javabeans.getIdproduto());
+			pst.executeUpdate();
+			// con.close();
+		} catch (Exception e) {
+			System.out.println("Erro: " + e);
+		}
+	}
 }

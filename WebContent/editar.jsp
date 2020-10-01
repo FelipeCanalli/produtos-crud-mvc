@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%
+	String idproduto = (String) request.getAttribute("idproduto");
+String tipo = (String) request.getAttribute("tipo");
+String nomeproduto = (String) request.getAttribute("nomeproduto");
+String descricao = (String) request.getAttribute("descricao");
+String preco = (String) request.getAttribute("preco");
+%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,34 +15,44 @@
 <title>Produtos Cadastrados</title>
 </head>
 <body>
-	<form name="frmCadastrar" action="update1">
+	<form name="frmCadastrar" action="update2">
 		<h1>Editar Produto</h1>
 		<table>
 			<tr>
-				<td><input type="number" name="idproduto" readonly /></td>
+				<td><input type="text" name="idproduto" value="<%=idproduto%>"
+					readonly /></td>
 			</tr>
 			<tr>
 				<td><label for="tipo">Tipo:</label> <select name="tipo">
-						<option value="Pizza salgada">Pizza salgada</option>
-						<option value="Pizza doce">Pizza doce</option>
-						<option value="Bebida">Bebida</option>
-						<option value="Lanche">Lanche</option>
+						<optgroup label="Atual">
+
+							<option value="<%=tipo%>"><%=tipo%></option>
+
+						</optgroup>
+						<optgroup label="Outras opções">
+							<option value="Pizza salgada">Pizza salgada</option>
+							<option value="Pizza doce">Pizza doce</option>
+							<option value="Bebida">Bebida</option>
+							<option value="Lanche">Lanche</option>
+						</optgroup>
 				</select></td>
 			</tr>
 			<tr>
 				<td><input type="text" name="nomeproduto"
-					placeholder="Nome do Produto" /></td>
+					placeholder="Nome do Produto" value="<%=nomeproduto%>" /></td>
 			</tr>
 			<tr>
-				<td><input type="text" name="descricao" placeholder="Descrição" />
-				</td>
+				<td><input type="text" name="descricao" placeholder="Descrição"
+					value="<%=descricao%>" /></td>
 			</tr>
 			<tr>
-				<td><input type="number" name="preco" placeholder="Preço" /></td>
+				<td><input type="number" name="preco" placeholder="Preço"
+					value="<%=preco%>" /></td>
 			</tr>
 		</table>
 		<input type="button" value="Salvar" onclick="validar()">
 	</form>
 	<script src="js/validador.js"></script>
+
 </body>
 </html>
