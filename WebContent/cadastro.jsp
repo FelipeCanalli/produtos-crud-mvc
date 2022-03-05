@@ -10,9 +10,10 @@
 <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+<div id="divPrincipal">
 	<form name="frmCadastrar" action="insert">
 		<h1>Cadastrar Produto</h1>
-		<table id="tbl2">
+		<table id="tbl2" class="centralizar table">
 			<tr>
 				<td><label for="tipo">Tipo:</label> <select name="tipo">
 						<option value="Pizza salgada">Pizza salgada</option>
@@ -33,13 +34,14 @@
 				<td><input type="number" name="preco" placeholder="Preço" /></td>
 			</tr>
 			<tr>
-				<td><input class="btn2" type="button" value="Adicionar"
+				<td><input class="btn1" type="button" value="Adicionar"
 					onclick="validar()"></td>
 			</tr>
 
 		</table>
 
 	</form>
+	</div>
 	<script src="js/validador.js"></script>
 </body>
 </html>

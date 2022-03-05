@@ -12,7 +12,7 @@ public class JavaBeans {
 
 	}
 
-	// Construtor que recebe o ArrayList do método listarConstatos() (DAO)
+	// Construtor que recebe o ArrayList do método listarProdutos() (DAO)
 	public JavaBeans(String idproduto, String tipo, String nomeproduto, String descricao, String preco) {
 		this.idproduto = idproduto;
 		this.tipo = tipo;

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%
-	String idproduto = (String) request.getAttribute("idproduto");
+String idproduto = (String) request.getAttribute("idproduto");
 String tipo = (String) request.getAttribute("tipo");
 String nomeproduto = (String) request.getAttribute("nomeproduto");
 String descricao = (String) request.getAttribute("descricao");
@@ -19,9 +19,9 @@ String preco = (String) request.getAttribute("preco");
 <body>
 	<form name="frmCadastrar" action="update2">
 		<h1>Editar Produto</h1>
-		<table id="tbl2">
+		<table id="tbl2" class="centralizar table">
 			<tr>
-				<td><input type="text" name="idproduto" value="<%=idproduto%>"
+				<td><input id="inputId" type="text" name="idproduto" value="<%=idproduto%>"
 					readonly /></td>
 			</tr>
 			<tr>
@@ -53,7 +53,7 @@ String preco = (String) request.getAttribute("preco");
 
 			</tr>
 			<tr>
-				<td><input class="btn2" type="button" value="Salvar"
+				<td><input class="btn1" type="button" value="Salvar"
 					onclick="validar()"></td>
 			</tr>
 		</table>

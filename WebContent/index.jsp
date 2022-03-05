@@ -17,46 +17,49 @@
 	<div id="header">
 		<h1>Produtos Cadastrados</h1>
 	</div>
-	<div id="caixaBtn">
-		<a class="btn1" href="cadastro.jsp">Cadastrar Produto</a>
+	
+	<div>
+		<div id="divBtn1" class="centralizar">
+			<a class="btn1" href="cadastro.jsp">Cadastrar Produto</a>
+		</div>
+			
+		<div>
+			<table id="tbl1" class="centralizar table">
+				<thead>
+					<tr>
+						<th>id</th>
+						<th>Tipo</th>
+						<th>Nome do produto</th>
+						<th>Descrição</th>
+						<th>Preço</th>
+						<th colspan="2">Ações</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%
+						DAO dao = new DAO();
+					ArrayList<JavaBeans> javabeans = dao.listarProdutos();
+					for (int i = 0; i < javabeans.size(); i++) {
+					%>
+					<tr>
+						<td><%=javabeans.get(i).getIdproduto()%></td>
+						<td><%=javabeans.get(i).getTipo()%></td>
+						<td><%=javabeans.get(i).getNomeproduto()%></td>
+						<td><%=javabeans.get(i).getDescricao()%></td>
+						<td>R$ <%=javabeans.get(i).getPreco()%></td>
+						<td><a
+							href="update1?idproduto=<%=javabeans.get(i).getIdproduto()%>"><img
+								class="img-btn" alt="Editar" src="img/edit.png"></a></td>
+						<td><a
+							href="delete?idproduto=<%=javabeans.get(i).getIdproduto()%>"><img
+								class="img-btn" alt="Excluir" src="img/delete.png"></a></td>
+					</tr>
+					<%
+						}
+					%>
+				</tbody>
+			</table>
+		</div>
 	</div>
-
-
-	<table id="tbl1">
-		<thead>
-			<tr>
-				<th>id</th>
-				<th>Tipo</th>
-				<th>Nome do produto</th>
-				<th>Descrição</th>
-				<th>Preço</th>
-				<th colspan="2">Ações</th>
-			</tr>
-		</thead>
-		<tbody>
-			<%
-				DAO dao = new DAO();
-			ArrayList<JavaBeans> javabeans = dao.listarContatos();
-			for (int i = 0; i < javabeans.size(); i++) {
-			%>
-			<tr>
-				<td><%=javabeans.get(i).getIdproduto()%></td>
-				<td><%=javabeans.get(i).getTipo()%></td>
-				<td><%=javabeans.get(i).getNomeproduto()%></td>
-				<td><%=javabeans.get(i).getDescricao()%></td>
-				<td>R$ <%=javabeans.get(i).getPreco()%></td>
-				<td><a
-					href="update1?idproduto=<%=javabeans.get(i).getIdproduto()%>"><img
-						class="img-btn" alt="Editar" src="img/edit.png"></a></td>
-				<td><a
-					href="delete?idproduto=<%=javabeans.get(i).getIdproduto()%>"><img
-						class="img-btn" alt="Excluir" src="img/delete.png"></a></td>
-			</tr>
-			<%
-				}
-			%>
-		</tbody>
-	</table>
-
 </body>
 </html>

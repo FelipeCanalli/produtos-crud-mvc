@@ -45,7 +45,7 @@ public class DAO {
 	}
 
 	/*** CRUD - Read ***/
-	public ArrayList<JavaBeans> listarContatos() {
+	public ArrayList<JavaBeans> listarProdutos() {
 		ArrayList<JavaBeans> javabeans = new ArrayList<>();
 		String query = "select * from tbproduto order by tipo desc";
 		try {
