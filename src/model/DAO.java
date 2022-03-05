@@ -47,7 +47,7 @@ public class DAO {
 	/*** CRUD - Read ***/
 	public ArrayList<JavaBeans> listarProdutos() {
 		ArrayList<JavaBeans> javabeans = new ArrayList<>();
-		String query = "SELECT idproduto,tipo, nomeproduto, descricao, REPLACE(preco,'.',',') as preco from tbproduto order by tipo desc;";
+		String query = "select * from tbproduto order by tipo desc";
 		try {
 			Connection con = conectar();
 			PreparedStatement pst = con.prepareStatement(query);
